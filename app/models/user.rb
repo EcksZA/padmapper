@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
 	validates :last_name, presence: true
 	validates :company, presence: true
 	validates :work_phone, presence: true
+	validates :cell_phone, presence: true
 end
