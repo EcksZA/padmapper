@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  database: padmapper_development
+
+test:
+  adapter: postgresql
+  database: padmapper_test
+
+production:
+  adapter: postgresql
+  database: padmapper_production
+  username: padmapper
+  password: <%= ENV['PADMAPPER_DATABASE_PASSWORD'] %>
