@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
 	validates :company, presence: true
 	validates :work_phone, presence: true
 	validates :cell_phone, presence: true
+
+	has_many :properties, dependent: :destroy
 end
