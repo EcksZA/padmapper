@@ -1,0 +1,18 @@
+<%= form_for @user do |f| %>
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name %>
+
+	<%= f.label :last_name %>
+	<%= f.text_field :last_name %>
+
+	<%= f.label :company %>
+	<%= f.text_field :company %>
+
+	<%= f.label :work_phone %>
+	<%= f.text_field :work_phone %>
+
+	<%= f.label :cell_phone %>
+	<%= f.text_field :cell_phone %>
+
+	<%= f.submit %>
+<% end %>

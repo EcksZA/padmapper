@@ -1,0 +1,5 @@
+<% content_for :title, 'Index | Padmapper' %>
+
+<% @users.each do |user| %>
+	<p><%= user.first_name %> <%= user.last_name %>
+<% end %>

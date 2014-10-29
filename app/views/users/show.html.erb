@@ -1,0 +1,12 @@
+<% content_for :title, 'User | Padmapper' %>
+
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<h4><%= @user.company %></h4>
+
+<p>Office Contact: <%= @user.work_phone %></p>
+<p>Mobile Contact: <%= @user.cell_phone %></p>
+
+<p><%= link_to 'Delete Account', user_path(@user), 
+									data: { confirm: 'Are you sure you want to delete this account?',
+													method: 'delete'}  
+%></p>		
