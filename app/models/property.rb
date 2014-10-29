@@ -4,5 +4,5 @@ class Property < ActiveRecord::Base
 	validates :bedroom, presence: true
 	validates :bathroom, presence: true
 
-	belongs_to :user
+	belongs_to :user, dependent: :destroy
 end

@@ -6,5 +6,5 @@ describe Property do
 	it { should validate_presence_of :bedroom }
 	it { should validate_presence_of :bathroom }
 
-	it { should belong_to :user }
+	it { should belong_to(:user).dependent(:destroy) }
 end
