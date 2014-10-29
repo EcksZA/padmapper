@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 	resources :properties, only: [:index]
 
   resources :users do
-  	resources :properties
+  	resources :properties, except: [:index]
   end
 end
