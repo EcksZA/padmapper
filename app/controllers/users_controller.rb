@@ -5,42 +5,48 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		render('users/show.html.erb')
+		render 'users/show.html.erb'
 	end
 
 	def new
-		@user = User.find(params[:id])
-		render('users/new.html.erb')
+		@user = User.new
+		render 'users/new.html.erb'
 	end
 
 	def create
-		@user = User.new(params[:user])
+		@user = User.new(user_params)
 		if @user.save
 			flash[:notice] = 'Your New Account Has Been Created'
-			redirect_to('users/show')
+			redirect_to user_path(@user)
 		else
-			render('users/new.html.erb')
+			render 'users/new.html.erb'
 		end
 	end
 
 	def edit
 		@user = User.find(params[:id])
-		render('users/edit.html.erb')
+		render 'users/edit.html.erb'
 	end
 
 	def update
 		@user = User.find(params[:id])
-		if @user.update(params[:user])
+		if @user.update(user_params)
 			flash[:notice] = 'Your Account Has Been Updated'
-			redirect_to('users/show.html.erb')
+			redirect_to user_path(@user)
 		else
-			render('users/edit.html.erb')
+			render 'users/edit.html.erb'
 		end
+	end
 
 	def destroy
 		@user = User.find(params[:id])
 		@user.delete
 		flash[:notice] = 'Your Account Has Been Removed'
-		render('user/index.html')
+		redirect_to users_path
+	end
+
+private
+	def user_params
+		params.require(:user).permit(:first_name, :last_name, :company, :work_phone, :cell_phone)
 	end
 end
