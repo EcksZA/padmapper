@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  resources :users
+	root to: 'properties#index'
+	
+	resources :properties, only: [:index]
+
+  resources :users do
+  	resources :properties
+  end
 end
