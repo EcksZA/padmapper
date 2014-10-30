@@ -1,0 +1,7 @@
+<% content_for :title, 'Index | Padmapper' %>
+
+<h1>Index</h1>
+
+<% @properties.each do |property| %>
+	<p><%= property.address %></p>
+<% end %>

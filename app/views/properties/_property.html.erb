@@ -1,0 +1,12 @@
+<div>
+	<%= property.address %>
+	<%= property.price %>
+	<%= property.bedroom %>
+	<%= property.bathroom %>
+	<p><%= link_to 'Edit Property', edit_user_property_path(@user, property), id: 'edit-property', remote: true %></p>
+	<p><%= link_to 'Delete Propery', user_property_path(@user, property), 
+						data: { confirm: 'Are you sure you want to delete this property?',
+										method: 'delete'
+										} 
+	%></p> 
+</div>

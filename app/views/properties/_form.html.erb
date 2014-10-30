@@ -1,0 +1,17 @@
+<div class='property-form'>
+	<%= form_for [@user, @property], id: 'property-form', remote: true do |f| %>
+		<%= f.label :address %>
+		<%= f.text_field :address %>
+
+		<%= f.label :price %>
+		<%= f.text_field :price %>
+
+		<%= f.label :bedroom %>
+		<%= f.text_field :bedroom %>
+
+		<%= f.label :bathroom %>
+		<%= f.text_field :bathroom %>
+
+		<%= f.submit %>
+	<% end %>
+</div>
