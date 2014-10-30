@@ -8,5 +8,6 @@ describe Property do
 
 	it { should belong_to :user }
 
-	it { should have_attached_file(:photo) }
+	it { should have_attached_file :photo }
+	it { should validate_attachment_content_type(:photo).allowing('image/png', 'image/jpeg', 'image/jpg', 'image/gif') }
 end
