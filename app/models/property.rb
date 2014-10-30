@@ -5,4 +5,6 @@ class Property < ActiveRecord::Base
 	validates :bathroom, presence: true
 
 	belongs_to :user
+
+	has_attached_file :photo
 end

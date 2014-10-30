@@ -7,4 +7,6 @@ describe Property do
 	it { should validate_presence_of :bathroom }
 
 	it { should belong_to :user }
+
+	it { should have_attached_file(:photo) }
 end
