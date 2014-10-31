@@ -2,6 +2,8 @@
 
 <h1>Index</h1>
 
+<%= link_to 'Create User', new_user_path %>
+
 <% @properties.each do |property| %>
 	<p><%= property.address %></p>
 <% end %>
