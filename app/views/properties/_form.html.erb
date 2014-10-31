@@ -1,5 +1,5 @@
 <div class='property-form'>
-	<%= form_for [@user, @property], id: 'property-form', remote: true do |f| %>
+	<%= form_for [@user, @property], html: { multipart: true }, id: 'property-form', remote: true do |f| %>
 		<%= f.label :address %>
 		<%= f.text_field :address %>
 
@@ -11,6 +11,8 @@
 
 		<%= f.label :bathroom %>
 		<%= f.text_field :bathroom %>
+
+		<%= f.file_field :photo %>
 
 		<%= f.submit %>
 	<% end %>
