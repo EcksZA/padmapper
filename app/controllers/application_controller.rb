@@ -8,5 +8,12 @@ private
 		@current_user ||= User.find(session[:user_id]) if session[:user_id]
 	end
 
+	def authorize
+		if current_user.nil?
+			flash[:alert] = "Not Authorized To View Page"
+			redirect_to login_url
+		end
+	end
+
 	helper_method :current_user
 end
