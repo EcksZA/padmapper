@@ -9,6 +9,7 @@ gem 'jbuilder'
 gem 'rmagick'
 gem 'paperclip'
 gem 'remotipart'
+gem 'bcrypt'
 
 group :development do
 	gem 'better_errors'
