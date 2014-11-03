@@ -6,6 +6,9 @@ class Property < ActiveRecord::Base
 
 	belongs_to :user
 
-	has_attached_file :photo, styles: { medium: '300x300>' }
+	has_attached_file :photo, styles: { medium: '300x300>' },
+										url: "/assets/properties/:id/:style/:basename.:extension",
+										path: ":rails_root/public/assets/properties/:id/:style/:basename.:extension"
+										
 	validates_attachment_content_type :photo, content_type: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif']
 end
