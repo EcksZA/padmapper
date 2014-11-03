@@ -8,4 +8,6 @@ describe User do
 	it { should validate_presence_of :cell_phone }
 
 	it { should have_many(:properties).dependent(:destroy) }
+
+	it { should have_secure_password }
 end

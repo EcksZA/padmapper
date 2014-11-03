@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 	validates :cell_phone, presence: true
 
 	has_many :properties, dependent: :destroy
+
+	has_secure_password
 end
