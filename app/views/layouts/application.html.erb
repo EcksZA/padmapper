@@ -8,10 +8,12 @@
 </head>
 <body>
 
-<%= flash[:alert] %>
-<%= flash[:notice] %>
+	<%= link_to 'signup', new_user_path %>
 
-<%= yield %>
+	<%= flash[:alert] %>
+	<%= flash[:notice] %>
+
+	<%= yield %>
 
 </body>
 </html>
