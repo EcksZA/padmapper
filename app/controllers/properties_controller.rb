@@ -1,4 +1,6 @@
 class PropertiesController < ApplicationController
+	before_action :authorize, except: [:index]
+
 	def index
 		@properties = Property.all
 	end
