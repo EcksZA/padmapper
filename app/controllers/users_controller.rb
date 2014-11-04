@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
-		render 'users/new.html.erb'
 	end
 
 	def create
