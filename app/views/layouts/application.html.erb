@@ -8,6 +8,9 @@
 </head>
 <body>
 
+	<%= flash[:alert] %>
+	<%= flash[:notice] %>
+
 	<% if current_user %>
 		<span id='logged-true'>
 			logged in as <%= current_user.email %>
@@ -19,9 +22,6 @@
 			<%= link_to 'log in', login_path, remote: true %>
 		</span>
 	<% end %>
-
-	<%= flash[:alert] %>
-	<%= flash[:notice] %>
 
 	<%= yield %>
 
