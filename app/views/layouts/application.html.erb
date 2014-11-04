@@ -9,11 +9,15 @@
 <body>
 
 	<% if current_user %>
-		logged in as <%= current_user.email %>
-		<%= link_to 'log out', logout_path %>
+		<span id='logged-true'>
+			logged in as <%= current_user.email %>
+			<%= link_to 'log out', logout_path %>
+		</span>
 	<% else %>
-		<%= link_to 'signup', signup_path %> or
-		<%= link_to 'log in', login_path %>
+		<span id='signup-login'>
+			<%= link_to 'signup', signup_path %> or
+			<%= link_to 'log in', login_path, remote: true %>
+		</span>
 	<% end %>
 
 	<%= flash[:alert] %>
