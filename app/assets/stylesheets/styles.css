@@ -1,0 +1,12 @@
+.flash-alert .flash-notice {
+	height: 0.5em;
+	width: 100%;
+}
+
+.flash-alert {
+	background-color: red;
+}
+
+.flash-notice {
+	background-color: green;
+}

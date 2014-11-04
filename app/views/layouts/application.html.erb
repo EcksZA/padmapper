@@ -8,8 +8,8 @@
 </head>
 <body>
 
-	<%= flash[:alert] %>
-	<%= flash[:notice] %>
+	<div class='flash-alert'><%= flash[:alert] %></div>
+	<div class='flash-notice'><%= flash[:notice] %></div>
 
 	<% if current_user %>
 		<span id='logged-true'>
