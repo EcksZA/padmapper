@@ -1,13 +1,20 @@
 class SessionsController < ApplicationController
 	def new
+		respond_to do |format|
+			format.html { redirect_to login_path }
+			format.js
+		end
 	end
 
 	def create
 		@user = User.find_by_email(params[:email])
 		if @user && @user.authenticate(params[:password])
-			session[:user_id] = @user.id
-			flash[:notice] = 'Logged In'
-			redirect_to root_url
+			respond_to do |format|
+				format.html { redirect_to root_url }
+				format.js
+				session[:user_id] = @user.id
+				flash[:notice] = 'Logged In'
+			end	
 		else
 			flash[:alert] = 'Email or password is invalid'
 			render 'new'
